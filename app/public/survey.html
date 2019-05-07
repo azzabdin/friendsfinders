@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <title>friends finders</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>survey questions</h2>
+        <br>
+        <h3><strong>About You</strong></h3>
+        <h4> Name(Required)</h4>
+        <input type="text" name="" id="name" class="form-control" required>
+        <h4> link to photo (Required)</h4>
+
+        <input type="text" name="" id="photo" class="form-control" required>
+        <br>
+        <h3><strong>question 1</strong></h3>
+        <h4> Your mind is always wondering</h4>
+        <select data-placeholdeer="" class="chosen" id="q1">
+            <option value=""></option>
+            <option value="1">1(stongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(strongly agree)</option>
+        </select>
+        <h3><strong>question 2</strong></h3>
+        <h4> Your mind is always wondering</h4>
+        <select data-placeholdeer="" class="chosen" id="q2">
+            <option value=""></option>
+            <option value="1">1(stongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(strongly agree)</option>
+        </select>
+        <h3><strong>question 3</strong></h3>
+        <h4> Your mind is always wondering</h4>
+        <select data-placeholdeer="" class="chosen" id="q3">
+            <option value=""></option>
+            <option value="1">1(stongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(strongly agree)</option>
+        </select>
+        <h3><strong>question 4</strong></h3>
+        <h4> Your mind is always wondering</h4>
+        <select data-placeholdeer="" class="chosen" id="q4">
+            <option value=""></option>
+            <option value="1">1(stongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(strongly agree)</option>
+        </select>
+
+        <h3><strong>question 5</strong></h3>
+        <h4> Your mind is always wondering</h4>
+        <select data-placeholdeer="" class="chosen" id="q5">
+            <option value=""></option>
+            <option value="1">1(stongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(strongly agree)</option>
+        </select>
+        <h3><strong>question 6</strong></h3>
+        <h4> Your mind is always wondering</h4>
+        <select data-placeholdeer="" class="chosen" id="q6">
+            <option value=""></option>
+            <option value="1">1(stongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(strongly agree)</option>
+        </select>
+        <h3><strong>question 7</strong></h3>
+        <h4> Your mind is always wondering</h4>
+        <select data-placeholdeer="" class="chosen" id="q7">
+            <option value=""></option>
+            <option value="1">1(stongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(strongly agree)</option>
+        </select>
+        <h3><strong>question 8</strong></h3>
+        <h4> Your mind is always wondering</h4>
+        <select data-placeholdeer="" class="chosen" id="q8">
+            <option value=""></option>
+            <option value="1">1(stongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(strongly agree)</option>
+        </select>
+        <h3><strong>question 9</strong></h3>
+        <h4> Your mind is always wondering</h4>
+        <select data-placeholdeer="" class="chosen" id="q9">
+            <option value=""></option>
+            <option value="1">1(stongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(strongly agree)</option>
+        </select>
+        <h3><strong>question 10</strong></h3>
+        <h4> Your mind is always wondering</h4>
+        <select data-placeholdeer="" class="chosen" id="q10">
+            <option value=""></option>
+            <option value="1">1(stongly disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5(strongly agree)</option>
+        </select>
+    </div>
+
+
+    <button id="btn">submit</button>
+    <script>
+        $("#btn").on("click", function () {
+            function validateform() {
+                var isvalid = true;
+                $(".form-control").each(function () {
+                    if ($(this).val() === "") {
+                        isvalid = false;
+                    }
+
+                });
+                return isvalid;
+
+            }
+            if (validateform()) {
+                var user = {
+                    name: $("#name").val(),
+                    photo: $("#photo").val(),
+                    scores: [
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                        $("#q7").val(),
+                        $("#q8").val(),
+                        $("#q9").val(),
+                        $("#q10").val(),
+
+                    ]
+                };
+                var currenturl = window.location.origin;
+
+
+
+                $.post(currenturl + "/api/friends", user, function (res) {
+                    alert("your best fried is"+ bestfriend)
+                });
+
+
+            }
+        });
+
+
+    </script>
+
+</body>
+
+</html>
