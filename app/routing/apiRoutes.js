@@ -12,14 +12,14 @@ module.exports = function (app) {
         };
         var user = req.body;
         var userscores = user.scores;
-        console.log({"user.scores": user.scores});
+        console.log({ "user.scores": user.scores });
         var diff = 0;
         for (var i = 0; i < friends.length; i++) {
             diff = 0;
             for (var u = 0; u < friends[i].scores[u]; u++) {
-                
+
                 diff += Math.abs(parseInt(userscores[u]) - parseInt(friends[i].scores[u]));
-                
+
                 if (diff <= bestfriend.fdiff) {
                     bestfriend.name = friends[i].name;
                     bestfriend.photo = friends[i].photo;
@@ -27,11 +27,11 @@ module.exports = function (app) {
 
                 }
             }
-        
+
         }
         friends.push(user)
         res.json(bestfriend);
-        
-    
+
+
     });
 }
